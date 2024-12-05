@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7xr5136ph47c"]
+
+[ext_resource type="Theme" uid="uid://1i27igjx7163" path="res://style/ui_1.tres" id="1_2h3wh"]
+[ext_resource type="Script" path="res://scripts/menu_simple_1.gd" id="1_xnw1o"]
+
+[node name="menu_1" type="Control" node_paths=PackedStringArray("hour_entry", "min_entry", "task_name")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xnw1o")
+hour_entry = NodePath("VBoxContainer/MarginContainer/HBoxContainer/hours")
+min_entry = NodePath("VBoxContainer/MarginContainer/HBoxContainer/minutes")
+task_name = NodePath("VBoxContainer/task_name")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -116.5
+offset_right = 200.5
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="task_name" type="LineEdit" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_2h3wh")
+placeholder_text = "task"
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="hours" type="LineEdit" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_2h3wh")
+placeholder_text = "hours"
+alignment = 1
+
+[node name="minutes" type="LineEdit" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_2h3wh")
+placeholder_text = "minutes"
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_2h3wh")
+text = "START"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/Button" to="." method="button_pressed"]

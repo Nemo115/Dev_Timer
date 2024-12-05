@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cx6akyylymw44"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 325.0
+offset_bottom = 31.0
+theme_override_constants/separation = 5
+
+[node name="project_dropdown" type="OptionButton" parent="."]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Gun Level"
+popup/item_1/text = "Story With No Name"
+popup/item_1/id = 1
+popup/item_2/text = "The LightBoat"
+popup/item_2/id = 2
+popup/item_3/text = "Death by Disco"
+popup/item_3/id = 3
+
+[node name="task" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+placeholder_text = "task"
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 2
+
+[node name="hours" type="LineEdit" parent="."]
+layout_mode = 2
+placeholder_text = "hours"
+
+[node name="minutes" type="LineEdit" parent="."]
+layout_mode = 2
+placeholder_text = "min"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "START"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+text = "DELETE"

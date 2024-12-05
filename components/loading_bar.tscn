@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ug1virlogpx"]
+
+[ext_resource type="Texture2D" uid="uid://vnxs5crnf1hc" path="res://sprites/bar/bar_outer.png" id="1_mcghf"]
+[ext_resource type="Texture2D" uid="uid://b70fjvrhloq34" path="res://sprites/bar/bar_fill.png" id="2_4nip8"]
+[ext_resource type="Script" path="res://scripts/loading_bar.gd" id="3_8mstq"]
+
+[node name="loading_bar" type="TextureProgressBar"]
+texture_filter = 1
+offset_left = -79.0
+offset_top = -2.0
+offset_right = 79.0
+offset_bottom = 3.0
+value = 90.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 1
+stretch_margin_right = 2
+stretch_margin_bottom = 1
+texture_over = ExtResource("1_mcghf")
+texture_progress = ExtResource("2_4nip8")
+script = ExtResource("3_8mstq")
+test_min = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="timeout"]
